@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- Драйвер, который используем для подключения к БД -->
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <!-- "Язык", на котором будем общаться с нашей БД (PostgreSQL) -->
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+    <!-- URL для подключения к нашей "rentcar" БД -->
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/taskmanager</property>
+    <!-- Указываем нашу БД "rentcar" -->
+    <!-- <property name="hibernate.default_schema"/>-->
+    <!-- Логин -->
+    <property name="hibernate.connection.username">postgres</property>
+    <!-- Пароль -->
+    <property name="hibernate.connection.password">root</property>
+    <!-- Пул подключений -->
+    <property name="hibernate.connection.pool_size">10</property>
+    <!-- Показ SQL-запросов в логах -->
+    <property name="show_sql">true</property>
+
+    <!-- Мапинг наших сущностей -->
+    <mapping class="shakhrai.pavel.taskmanager.entities.Companys"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Positions"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Projects"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.ProjectStatus"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Role"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Sections"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Sex"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Specialization"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Tasks"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.TaskStatus"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.TaskTemplate"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.User"/>
+
+
+  </session-factory>
+</hibernate-configuration>

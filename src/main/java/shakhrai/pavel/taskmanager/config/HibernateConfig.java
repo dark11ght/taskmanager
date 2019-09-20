@@ -1,3 +1,4 @@
+/*
 package shakhrai.pavel.taskmanager.config;
 
 import org.hibernate.SessionFactory;
@@ -58,3 +59,4 @@ public class HibernateConfig {
 
 
 }
+*/
