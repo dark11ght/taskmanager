@@ -22,7 +22,6 @@ public class Role {
     public Role() {
     }
 
-
     public Long getId() {
         return id;
     }

@@ -30,7 +30,7 @@
     <mapping class="shakhrai.pavel.taskmanager.entities.Section"/>
     <mapping class="shakhrai.pavel.taskmanager.entities.Sex"/>
     <mapping class="shakhrai.pavel.taskmanager.entities.Specialization"/>
-    <mapping class="shakhrai.pavel.taskmanager.entities.Tasks"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Task"/>
     <mapping class="shakhrai.pavel.taskmanager.entities.TaskStatus"/>
     <mapping class="shakhrai.pavel.taskmanager.entities.TaskTemplate"/>
     <mapping class="shakhrai.pavel.taskmanager.entities.User"/>

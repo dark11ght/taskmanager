@@ -17,7 +17,7 @@ public class Position {
     @Column(name = "position_title", unique = true, nullable = false, length = 255)
     private String positionTitle;
 
-    @OneToMany(mappedBy = "positions")
+    @OneToMany(mappedBy = "position")
     private Set<User> users = new HashSet<>();
 
     public Position() {
@@ -51,10 +51,10 @@ public class Position {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Position positions = (Position) o;
-        return Objects.equals(id, positions.id) &&
-                Objects.equals(positionTitle, positions.positionTitle) &&
-                Objects.equals(users, positions.users);
+        Position position = (Position) o;
+        return Objects.equals(id, position.id) &&
+                Objects.equals(positionTitle, position.positionTitle) &&
+                Objects.equals(users, position.users);
     }
 
     @Override

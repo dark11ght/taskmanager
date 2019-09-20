@@ -3,7 +3,9 @@ package shakhrai.pavel.taskmanager.entities;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "projects")
@@ -41,6 +43,9 @@ public class Project {
     private Timestamp changedDate;
     @Column(name = "close_date")
     private Timestamp closeDate;
+
+    @OneToMany(mappedBy = "project")
+    private Set<TaskTemplate> taskTemplates = new HashSet<>();
 
     public Project() {
     }
@@ -141,6 +146,14 @@ public class Project {
         this.closeDate = closeDate;
     }
 
+    public Set<TaskTemplate> getTaskTemplates() {
+        return taskTemplates;
+    }
+
+    public void setTaskTemplates(Set<TaskTemplate> taskTemplates) {
+        this.taskTemplates = taskTemplates;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -157,12 +170,13 @@ public class Project {
                 Objects.equals(startDate, project.startDate) &&
                 Objects.equals(finishDate, project.finishDate) &&
                 Objects.equals(changedDate, project.changedDate) &&
-                Objects.equals(closeDate, project.closeDate);
+                Objects.equals(closeDate, project.closeDate) &&
+                Objects.equals(taskTemplates, project.taskTemplates);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, projectCode, projectTitle, company, user, projectStatus, projectInfo, createDate, startDate, finishDate, changedDate, closeDate);
+        return Objects.hash(id, projectCode, projectTitle, company, user, projectStatus, projectInfo, createDate, startDate, finishDate, changedDate, closeDate, taskTemplates);
     }
 
     @Override
@@ -180,6 +194,7 @@ public class Project {
                 ", finishDate=" + finishDate +
                 ", changedDate=" + changedDate +
                 ", closeDate=" + closeDate +
+                ", taskTemplates=" + taskTemplates +
                 '}';
     }
 }

@@ -108,3 +108,12 @@ CREATE TABLE public.tasks
     task_template_id BIGINT NOT NULL,
     user_id BIGINT NOT NULL
 );
+
+    id bigserial PRIMARY KEY,
+    project_id BIGINT NOT NULL,
+    sections_id bigint NOT NULL,
+    create_date date NOT NULL,
+    close_date date,
+    section_status bigint NOT NULL,
+    section_info varchar(255)
+);
