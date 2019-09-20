@@ -7,20 +7,20 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "sex")
-public class Sex {
+@Table(name = "positions")
+public class Position {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    public Long id;
+    private Long id;
+    @Column(name = "position_title", unique = true, nullable = false, length = 255)
+    private String positionTitle;
 
-    @Column(name = "sex", unique = true)
-    public String sex;
-    @OneToMany(mappedBy = "sex")
+    @OneToMany(mappedBy = "positions")
     private Set<User> users = new HashSet<>();
 
-    public Sex() {
+    public Position() {
     }
 
     public Long getId() {
@@ -31,12 +31,12 @@ public class Sex {
         this.id = id;
     }
 
-    public String getSex() {
-        return sex;
+    public String getPositionTitle() {
+        return positionTitle;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setPositionTitle(String positionTitle) {
+        this.positionTitle = positionTitle;
     }
 
     public Set<User> getUsers() {
@@ -51,22 +51,22 @@ public class Sex {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Sex sex1 = (Sex) o;
-        return id == sex1.id &&
-                Objects.equals(sex, sex1.sex) &&
-                Objects.equals(users, sex1.users);
+        Position positions = (Position) o;
+        return Objects.equals(id, positions.id) &&
+                Objects.equals(positionTitle, positions.positionTitle) &&
+                Objects.equals(users, positions.users);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, sex, users);
+        return Objects.hash(id, positionTitle, users);
     }
 
     @Override
     public String toString() {
-        return "Sex{" +
+        return "Position{" +
                 "id=" + id +
-                ", sex='" + sex + '\'' +
+                ", positionTitle='" + positionTitle + '\'' +
                 ", users=" + users +
                 '}';
     }

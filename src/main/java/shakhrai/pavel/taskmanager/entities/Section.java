@@ -1,4 +1,4 @@
 package shakhrai.pavel.taskmanager.entities;
 
-public class Sections {
+public class Section {
 }

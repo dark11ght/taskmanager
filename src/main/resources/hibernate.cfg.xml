@@ -22,12 +22,12 @@
     <property name="show_sql">true</property>
 
     <!-- Мапинг наших сущностей -->
-    <mapping class="shakhrai.pavel.taskmanager.entities.Companys"/>
-    <mapping class="shakhrai.pavel.taskmanager.entities.Positions"/>
-    <mapping class="shakhrai.pavel.taskmanager.entities.Projects"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Company"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Position"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Project"/>
     <mapping class="shakhrai.pavel.taskmanager.entities.ProjectStatus"/>
     <mapping class="shakhrai.pavel.taskmanager.entities.Role"/>
-    <mapping class="shakhrai.pavel.taskmanager.entities.Sections"/>
+    <mapping class="shakhrai.pavel.taskmanager.entities.Section"/>
     <mapping class="shakhrai.pavel.taskmanager.entities.Sex"/>
     <mapping class="shakhrai.pavel.taskmanager.entities.Specialization"/>
     <mapping class="shakhrai.pavel.taskmanager.entities.Tasks"/>
